@@ -4,6 +4,7 @@
 <% @users.each do |user| %>
      <tr>
         <td><%= user.name %></td>
-        <td><%= user.role %> <%= link_to "Cambiar rol", page_path(user), method: :put, class: "btn btn-success" %> </td>
+        <td><%= user.role %> <%= link_to "Cambiar rol", page_path(user), method: :put, class: "btn btn-success" %>
+        </td>
      </tr>
  <% end %>
