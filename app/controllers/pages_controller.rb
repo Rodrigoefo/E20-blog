@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
 
   def index
-    @users = User.all
+    @users = User.order(:created_at)
     authorize! :manage, @pages
 
   end
@@ -18,5 +18,13 @@ authorize! :update, @pages
   redirect_to pages_path
 
 end
+
+def destroy
+  @user = User.find(params[:id])
+  @user.destroy
+  redirect_to pages_path
+
+end
+
 
 end

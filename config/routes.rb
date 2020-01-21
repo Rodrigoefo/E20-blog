@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'pages/index'
   resources :pages
 
 	resources :posts do
 		resources :comments, only: [:create, :destroy]
+
 	end
 
 	devise_for :users, controllers: {
